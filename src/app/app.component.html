@@ -1,0 +1,29 @@
+<div class="content">
+
+
+  <div class="problem-board">
+    
+    <h1 class="title">Minimize JS</h1>
+
+    <div class="inside-problem-board" style="height: calc( 100vh - 200px)">
+      <div style="flex: 1; padding-top: 20px; padding-right: 20px; overflow-y: auto; overflow-x: hidden;" class="scrollbar" [innerHtml]="sanitizedDescription"></div>
+    </div>    
+  </div>
+
+  <div class="board" style="display: flex; flex-direction: row;">
+
+    <div #codePanelContent style="display: flex; flex-direction: column; flex: 1; margin: 0 none; padding: 3rem;"> 
+
+      <ngs-code-editor #codeEditor style="height: calc(100vh - 180px)" [theme]="theme" [codeModel]="codeModel"  [options]="options" (valueChanged)="onCodeChanged()"></ngs-code-editor>      
+
+      <div style="display: flex; flex-direction: row; margin-top: 15px;">
+        <div style="padding-top: 10px">Character Size: {{numCharacters}}</div>
+        <div style="flex:1"></div>
+        <button mat-stroked-button style="margin-right: 10px; width: 150px;" (click)="onSendEmail()"><mat-icon>mail</mat-icon>Enviar reto</button>
+        <button mat-stroked-button style="margin-right: 10px; width: 150px;" (click)="onReset()"><mat-icon>restart_alt</mat-icon>Reset</button>
+        <button mat-flat-button color="primary" style="width: 150px;" (click)="executeTest()"><mat-icon>play_arrow</mat-icon>Ejecutar</button>
+      </div>
+    </div>
+  </div>
+
+</div>

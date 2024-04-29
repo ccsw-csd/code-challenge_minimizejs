@@ -1,0 +1,31 @@
+
+<div style="display: flex; flex-direction: column; padding: 25px 40px;">
+    
+    <div style="display: flex; flex-direction: row;">
+        <h1>Ejecutar Tests</h1>
+        <div style="flex:1"></div>
+        <span *ngIf="testResult == 0" style="color: green;" class="material-icons">hourglass_empty</span>
+        <span *ngIf="testResult == -1" style="color: red;" class="material-icons">error</span>
+        <span *ngIf="testResult == 1" style="color: green;" class="material-icons">check_circle</span>
+    </div>
+
+    <div *ngFor="let test of tests">
+        <div style="display: flex; flex-direction: row; margin-top: 10px;">
+            <div style="padding-top: 3px;">{{test.name}}</div>
+            <div style="flex:1"></div>
+            <div *ngIf="test.result == 0" style="color: green;"><span class="material-icons">hourglass_empty</span></div>
+            <div *ngIf="test.result == -1" style="color: red;"><span class="material-icons">error</span></div>
+            <div *ngIf="test.result == 1" style="color: green;"><span class="material-icons">check_circle</span></div>
+        </div>
+    </div>
+
+    
+
+    <div style="display: flex; flex-direction: row; margin-top: 35px; justify-content: end;">
+        <button mat-flat-button color="primary" (click)="onClose()"><mat-icon>close</mat-icon>Cerrar</button>
+    </div>    
+
+</div>
+
+
+

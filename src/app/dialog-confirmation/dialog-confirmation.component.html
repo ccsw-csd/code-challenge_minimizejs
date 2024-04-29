@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    <div [innerHTML]="description" class="description"></div>
+
+    <div class="buttons">
+        <button mat-stroked-button (click)="onNo()" style="width:150px"><mat-icon>close</mat-icon>No</button>
+        <button mat-flat-button color="primary" (click)="onYes()"  style="width:150px"><mat-icon>done</mat-icon>Sí</button>
+    </div>
+</div> 
