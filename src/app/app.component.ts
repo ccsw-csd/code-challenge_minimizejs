@@ -100,7 +100,8 @@ export class AppComponent implements OnInit {
   }
 
   getEmailBody(): string {
-    return "Aquí tienes mi solución al nivel "+this.actualLevel.id+" de CodeChallenge:%0D%0A%0D%0A"+this.codeModel.value.replaceAll('\n', '%0D%0A')+"%0D%0A%0D%0A%0D%0AUn saludo.";
+    let code = this.codeModel.value.replaceAll('\n', '%0D%0A').replaceAll('&', '%26');
+    return "Aquí tienes mi solución al nivel "+this.actualLevel.id+" de CodeChallenge:%0D%0A%0D%0A"+code+"%0D%0A%0D%0A%0D%0AUn saludo.";
   }
 
 
