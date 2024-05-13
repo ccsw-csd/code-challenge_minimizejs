@@ -9,12 +9,17 @@ El enunciado entero está en la siguiente [url](https://ccsw-csd.github.io/code-
 
 A continuación mostramos el ranking general
 
-| #  | Size (chars) |    Author                   |        Date       |
-|----|--------------|-----------------------------|-------------------|
-| 1  | 203          | Jose Luis Sanchez Fernandez |   08/05/24 10:08  |
-| 2  | 229          | Manuel Gonzalo Recuero      |   09/05/24 15:59  |
-| 3  | 288          | Ivan Cidudad Espinar        |   07/05/24 17:08  |
-| 4  | 810          | Pablo Jiménez Martínez      |   06/05/24 14:00  |
+| #  | Size (chars) |    Author                        |        Date       |
+|----|--------------|----------------------------------|-------------------|
+| 1  | 152          | Raul Antonio Obagi Yaghmour      |   13/05/24 07:39  |
+| 2  | 183          | Jose Luis Sanchez Fernandez      |   13/05/24 09:41  |
+| 3  | 190          | Cristo Suarez Garcia             |   10/05/24 13:36  |
+| 4  | 199          | Sergio Eloy Seixas Dominguez     |   13/05/24 11:58  |
+| 5  | 202          | Miguel Ignacio Hernandez Sanchez |   10/05/24 13:29  |
+| 6  | 229          | Manuel Gonzalo Recuero           |   09/05/24 15:59  |
+| 7  | 288          | Ivan Cidudad Espinar             |   07/05/24 17:08  |
+| 8  | 303          | Raul Gomez Beteta                |   10/05/24 13:18  |
+| 9  | 810          | Pablo Jiménez Martínez           |   06/05/24 14:00  |
 
 
 
@@ -22,6 +27,190 @@ A continuación mostramos el ranking general
 
 En este punto iremos añadiendo las soluciones presentadas, por orden de presentación.
 
+
+### Sergio Eloy Seixas Dominguez (13/05/24 11:58) - 199 chars
+
+``` javascript
+
+function isValidCopy(e,n){
+	for(var t=0;t<e.length;){
+		let i="#+:. ",
+			f=e[t],
+			l=n[t++],
+			o=i.indexOf(f),
+			a=i.indexOf(l)
+			
+		n=~[f.toLowerCase(),f].indexOf(l) || o < a && 0 <= o || 0 <= a && f.match(/[a-z]/i)?n:""
+	}
+	return t==n.length
+}
+
+```
+
+### Jose Luis Sanchez Fernandez (13/05/24 09:41) - 183 chars
+
+``` javascript
+
+let isValidCopy = (e, t) => {
+
+    let l = 0,
+        i = e => "#+:. ".indexOf(e)
+
+    for (let o of e) {
+       let n = i(t[l])
+       t = ~[o.toLowerCase(), o].indexOf(t[l++]) || (i(o) < n && 0 <= i(o)) || (0 <= n && /[a-z]/i.test(o)) ? t : 0
+    }
+
+    return l == t.length
+}
+
+```
+
+### Raul Antonio Obagi Yaghmour (13/05/24 07:39) - 152 chars
+
+``` javascript
+
+let isValidCopy = (e, t) => {
+
+    let l = 0,
+        i = e => "#+:. ".indexOf(e)
+
+    for (let o of e) {
+        let n = i(t[l])
+        t = ~[o.toLowerCase(), o].indexOf(t[l++]) || (i(o) < n && 0 <= i(o)) || (0 <= n && /[a-z]/i.test(o)) ? t : 0
+    }
+
+    return l == t.length
+}
+
+```
+
+### Raul Antonio Obagi Yaghmour (13/05/24 07:39) - 152 chars
+
+``` javascript
+
+let isValidCopy = (a, b, d = y => `#+:. `.indexOf(y)) =>
+	!b[a.length] &&
+		[...a].every((x, i) => x == (a = b[i]) |
+			(/[a-z]/i.test(x) ? x.toLowerCase() == a | ~d(a) : ~d(x) && d(x) < d(a))
+		)
+
+```
+
+
+### Miguel Ignacio Hernandez Sanchez (10/05/24 13:45) - 202 chars
+
+``` javascript
+
+function isValidCopy(e,n){
+	let t=0,
+        i="#+:. ";
+ 
+	for(;t<e.length;){
+		let f=e[t],
+			l=n[t++],
+			o=i.indexOf(f),
+			a=i.indexOf(l);
+ 
+		n=~[f.toLowerCase(),f].indexOf(l) || o <= a && 0 <= o || 0 <= a && f.match(/[a-z]/i)?n:""
+	}
+ 
+	return t==n.length
+}
+
+```
+
+### Cristo Suarez Garcia (10/05/24 13:36) - 190 chars
+
+``` javascript
+
+function isValidCopy(e,n){
+	let t=0,
+		i="#+:. ",
+		f;
+
+	for(f of e){
+		let	l=n[t++],
+			o=i.indexOf(f),
+			a=i.indexOf(l);
+	
+		n=~[f.toLowerCase(),f].indexOf(l) || o <= a && 0 <= o || 0 <= a && f.match(/[a-z]/i)?n:""
+	}
+
+	return t===n.length
+}
+
+``` 
+
+
+### Sergio Eloy Seixas Dominguez (10/05/24 13:29) - 200 chars
+
+``` javascript
+
+function isValidCopy(e,n){
+	for(var t=0;t<e.length;){
+		let i="#+:. ",
+			f=e[t],
+			l=n[t++],
+			o=i.indexOf(f),
+			a=i.indexOf(l)
+			
+		n=~[f.toLowerCase(),f].indexOf(l) || o <= a && 0 <= o || 0 <= a && f.match(/[a-z]/i)?n:""
+	}
+	return t==n.length
+}
+
+```
+
+### Raul Gomez Beteta (10/05/24 13:18) - 303 chars
+
+``` javascript
+
+function isValidCopy(o, c) {
+    if (o.length !== c.length) {
+      return false;
+    }
+   
+    for (let i = 0; i < o.length; i++) {
+      if(!f(o[i], c[i]))
+        return false;     
+    }
+    return true;
+  }
+
+  function f(o, c){   
+    return o == c ? true :
+        o.match("[A-Z]") ? f(o.toLowerCase(), c) :
+        o.match("[a-z]") ? f("#", c) :
+        (o == "#") ? f("+", c) :
+        (o == "+") ? f(":", c) :
+        (o == ":") ? f(".", c) :
+        (o == ".") ? f(" ", c) : false
+  }  
+
+```
+
+### Jose Luis Sanchez Fernandez (10/05/24 13:03) - 195 chars
+
+``` javascript
+
+function isValidCopy(e, n) {
+
+    let t = 0,
+        i = "#+:. "
+
+    for (let f of e) {
+
+        let l = i.indexOf(f),
+            o = i.indexOf(n[t])
+
+        n = (!(~[f.toLowerCase(), f].indexOf(n[t++]) || (l <= o && 0 <= l ) || (0 <= o && f.match(/[a-z]/i)))) ? 0 : n
+    }
+
+    return t == n.length
+}
+
+```
 
 ### Manuel Gonzalo Recuero (09/05/24 15:59) - 229 chars
 
