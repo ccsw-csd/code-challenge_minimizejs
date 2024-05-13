@@ -70,25 +70,6 @@ let isValidCopy = (e, t) => {
 
 ``` javascript
 
-let isValidCopy = (e, t) => {
-
-    let l = 0,
-        i = e => "#+:. ".indexOf(e)
-
-    for (let o of e) {
-        let n = i(t[l])
-        t = ~[o.toLowerCase(), o].indexOf(t[l++]) || (i(o) < n && 0 <= i(o)) || (0 <= n && /[a-z]/i.test(o)) ? t : 0
-    }
-
-    return l == t.length
-}
-
-```
-
-### Raul Antonio Obagi Yaghmour (13/05/24 07:39) - 152 chars
-
-``` javascript
-
 let isValidCopy = (a, b, d = y => `#+:. `.indexOf(y)) =>
 	!b[a.length] &&
 		[...a].every((x, i) => x == (a = b[i]) |
