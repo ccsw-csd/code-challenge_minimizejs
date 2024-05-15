@@ -12,16 +12,16 @@ A continuación mostramos el ranking general
 | #  | Size (chars) |    Author                        |        Date       |
 |----|--------------|----------------------------------|-------------------|
 | 1  | 152          | Raul Antonio Obagi Yaghmour      |   13/05/24 07:39  |
-| 1  | 161          | Pablo Mir Gomez                  |   14/05/24 14:37  |
-| 1  | 177          | Therry Efrain Miranda Leota      |   14/05/24 09:15  |
+| 2  | 161          | Pablo Mir Gomez                  |   14/05/24 14:37  |
+| 3  | 177          | Therry Efrain Miranda Leota      |   14/05/24 09:15  |
 | 4  | 180          | Sergio Eloy Seixas Dominguez     |   14/05/24 11:12  |
-| 2  | 183          | Jose Luis Sanchez Fernandez      |   13/05/24 09:41  |
-| 3  | 190          | Cristo Suarez Garcia             |   10/05/24 13:36  |
-| 5  | 202          | Miguel Ignacio Hernandez Sanchez |   10/05/24 13:29  |
-| 6  | 229          | Manuel Gonzalo Recuero           |   09/05/24 15:59  |
-| 7  | 288          | Ivan Cidudad Espinar             |   07/05/24 17:08  |
-| 8  | 303          | Raul Gomez Beteta                |   10/05/24 13:18  |
-| 9  | 810          | Pablo Jiménez Martínez           |   06/05/24 14:00  |
+| 5  | 183          | Jose Luis Sanchez Fernandez      |   13/05/24 09:41  |
+| 6  | 190          | Cristo Suarez Garcia             |   10/05/24 13:36  |
+| 7  | 202          | Miguel Ignacio Hernandez Sanchez |   10/05/24 13:29  |
+| 8  | 229          | Manuel Gonzalo Recuero           |   09/05/24 15:59  |
+| 9  | 288          | Ivan Cidudad Espinar             |   07/05/24 17:08  |
+| 10 | 303          | Raul Gomez Beteta                |   10/05/24 13:18  |
+| 11 | 810          | Pablo Jiménez Martínez           |   06/05/24 14:00  |
 
 
 
