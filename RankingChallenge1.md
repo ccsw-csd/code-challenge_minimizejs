@@ -12,9 +12,11 @@ A continuación mostramos el ranking general
 | #  | Size (chars) |    Author                        |        Date       |
 |----|--------------|----------------------------------|-------------------|
 | 1  | 152          | Raul Antonio Obagi Yaghmour      |   13/05/24 07:39  |
+| 1  | 161          | Pablo Mir Gomez                  |   14/05/24 14:37  |
+| 1  | 177          | Therry Efrain Miranda Leota      |   14/05/24 09:15  |
+| 4  | 180          | Sergio Eloy Seixas Dominguez     |   14/05/24 11:12  |
 | 2  | 183          | Jose Luis Sanchez Fernandez      |   13/05/24 09:41  |
 | 3  | 190          | Cristo Suarez Garcia             |   10/05/24 13:36  |
-| 4  | 199          | Sergio Eloy Seixas Dominguez     |   13/05/24 11:58  |
 | 5  | 202          | Miguel Ignacio Hernandez Sanchez |   10/05/24 13:29  |
 | 6  | 229          | Manuel Gonzalo Recuero           |   09/05/24 15:59  |
 | 7  | 288          | Ivan Cidudad Espinar             |   07/05/24 17:08  |
@@ -26,6 +28,81 @@ A continuación mostramos el ranking general
 ## Soluciones presentadas (en orden de presentación)
 
 En este punto iremos añadiendo las soluciones presentadas, por orden de presentación.
+
+### Pablo Mir Gomez (14/05/24 14:37) - 161 chars
+
+``` javascript
+
+let isValidCopy = (o, c) =>
+    !c[o.length] &&
+    [...o].every((v, i) =>
+        v == c[i] | v.toLowerCase() == c[i]
+        | x(c[i]) > -1 & /[a-z]/i.test(v)
+        | x(v) > -1 & x(c[i]) >= x(v)
+    ),
+    x = (c) => '#+:. '.indexOf(c)
+
+``` 
+
+
+### Sergio Eloy Seixas Dominguez (14/05/24 11:12) - 180 chars
+
+``` javascript
+
+let isValidCopy = (e,n,f, t=0,i="#+:. ")=> {
+	for(f of e){
+		let l=n[t++],
+			o=i.indexOf(f),
+			a=i.indexOf(l)
+
+		n=~[f.toLowerCase(),f].indexOf(l) || o < a && 0 <= o || 0 <= a && /[a-z]/i.test(f)?n:0
+
+	}
+
+	return t==n.length
+}
+
+```
+
+
+### Therry Efrain Miranda Leota (14/05/24 09:15) - 177 chars
+
+``` javascript
+
+let isValidCopy = (e, t) => {
+	let n,
+		l = 0,
+		i = (p, s= "#+:. ") => s.indexOf(p)
+
+	for (let o of e) {
+		n = i(t[l])
+		t = ~i(t[l++],[o.toLowerCase(), o]) | i(o) < n & 0 <= i(o) || 0 <= n && o.match(/[a-z]/i) ? t : 0
+	}
+
+	return l == t.length
+}
+
+```
+
+### Therry Efrain Miranda Leota (14/05/24 02:22) - 179 chars
+
+``` javascript
+
+let isValidCopy = (e, t) => {
+
+	let n,
+		l = 0,
+		i = (p, s="#+:. ") => s.indexOf(p)
+
+	for (let o of e) {
+		n = i(t[l])
+		t = ~i(t[l++],[o.toLowerCase(), o]) || i(o) < n && 0 <= i(o) || 0 <= n && o.match(/[a-z]/i) ? t : 0
+	}
+
+	return l == t.length
+}
+
+```
 
 
 ### Sergio Eloy Seixas Dominguez (13/05/24 11:58) - 199 chars
