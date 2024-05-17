@@ -11,23 +11,129 @@ A continuación mostramos el ranking general
 
 | #  | Size (chars) |    Author                        |        Date       |
 |----|--------------|----------------------------------|-------------------|
-| 1  | 152          | Raul Antonio Obagi Yaghmour      |   13/05/24 07:39  |
-| 2  | 161          | Pablo Mir Gomez                  |   14/05/24 14:37  |
-| 3  | 177          | Therry Efrain Miranda Leota      |   14/05/24 09:15  |
-| 4  | 180          | Sergio Eloy Seixas Dominguez     |   14/05/24 11:12  |
-| 5  | 183          | Jose Luis Sanchez Fernandez      |   13/05/24 09:41  |
-| 6  | 190          | Cristo Suarez Garcia             |   10/05/24 13:36  |
-| 7  | 202          | Miguel Ignacio Hernandez Sanchez |   10/05/24 13:29  |
-| 8  | 229          | Manuel Gonzalo Recuero           |   09/05/24 15:59  |
-| 9  | 288          | Ivan Cidudad Espinar             |   07/05/24 17:08  |
-| 10 | 303          | Raul Gomez Beteta                |   10/05/24 13:18  |
-| 11 | 810          | Pablo Jiménez Martínez           |   06/05/24 14:00  |
+| 1  | 145          | Jose Antonio Blanco Riera        |   16/05/24 09:04  |
+| 2  | 146          | Raul Antonio Obagi Yaghmour      |   16/05/24 11:18  |
+| 3  | 147          | Jose Luis Sanchez Fernandez      |   16/05/24 14:07  |
+| 4  | 161          | Pablo Mir Gomez                  |   14/05/24 14:37  |
+| 5  | 172          | Sergio Eloy Seixas Dominguez     |   16/05/24 20:21  |
+| 6  | 177          | Therry Efrain Miranda Leota      |   14/05/24 09:15  |
+| 7  | 190          | Cristo Suarez Garcia             |   10/05/24 13:36  |
+| 8  | 202          | Miguel Ignacio Hernandez Sanchez |   10/05/24 13:29  |
+| 9  | 229          | Manuel Gonzalo Recuero           |   09/05/24 15:59  |
+| 10 | 288          | Ivan Cidudad Espinar             |   07/05/24 17:08  |
+| 11 | 303          | Raul Gomez Beteta                |   10/05/24 13:18  |
+| 12 | 810          | Pablo Jiménez Martínez           |   06/05/24 14:00  |
 
 
 
 ## Soluciones presentadas (en orden de presentación)
 
 En este punto iremos añadiendo las soluciones presentadas, por orden de presentación.
+
+### Jose Luis Sanchez Fernandez (16/05/24 14:07) - 147 chars
+
+``` javascript
+
+let isValidCopy = (e, i, t=e => "#+:. ".indexOf(e), a=0) => 
+    [...e].every(o => 
+        o == (e=i[a++]) | 
+        (/[a-z]/i.test(o) ? o.toLowerCase() == e | ~t(e) : ~t(o) && t(o) < t(e))
+    ) && 
+    !i[a]
+
+```
+
+
+### Raúl Antonio Obagi Yaghmour (16/05/24 11:18) - 146 chars
+
+``` javascript
+
+let isValidCopy = (a, b) =>
+    !b[a.length] &&
+        [...a].every((x, i) =>
+            (a = b[i]) == x.toLowerCase(i = y => `${/[a-z]/i.test(x) && x}#+:. `.indexOf(y)) |
+            (~i(x) && i(x) <= i(a))
+        )
+
+```
+
+
+### Jose Antonio Blanco Riera (16/05/24 09:04) - 145 chars
+
+``` javascript
+
+let isValidCopy = (o, c, i = 0, x = k => 
+    ~'#+:. '.indexOf(k)) =>
+        [...o].every(v =>
+            v == (o = c[i++])
+                | v.toLowerCase() == o
+                || x(o) * /[a-z]/i.test(v)
+                | x(v) && x(o) < x(v)
+        ) && !c[i]
+
+```
+
+### Sergio Eloy Seixas Dominguez (16/05/24 20:21) - 172 chars
+
+``` javascript
+
+let isValidCopy = (e, t, n, l=0,o,i = (p, s= "#+:. ") => 
+	s.indexOf(p)) => {
+
+		for (o of e) {
+			n= i(t[l])
+			t= ~i(t[l++],[o.toLowerCase(), o]) | i(o) < n & 0 <= i(o) || 0 <= n & /[a-z]/i.test(o)?t:0
+		}
+
+		return l == t.length
+	}
+
+```
+
+
+### Jose Luis Sanchez Fernandez (15/05/24 20:21) - 149 chars
+
+``` javascript
+
+let isValidCopy=(e,i,t=e => 
+    "|#+:. ".indexOf(e),a,o=0) => 
+	    [...e].every(e =>
+		    e == (a=i[o++]) | 
+		    e.toLowerCase() == a | 
+		    0 < t(a) & /[a-z]/i.test(e) |
+		    0 < t(e) & t(e) < t(a)) && !i[o]
+
+```
+
+### Jose Luis Sanchez Fernandez (15/05/24 19:29) - 154 chars
+
+``` javascript
+
+let isValidCopy = (o, c, x = f => '|#+:. '.indexOf(f)) => 
+    [...o].every((v, i, h, r=c[i] ) =>
+        v == r                      |
+        v.toLowerCase() == r        |
+        0 < x(r) & /[a-z]/i.test(v) |
+        0 < x(v) & x(v) < x(r)
+    ) && !c[o.length]
+
+```
+
+
+### Jose Antonio Blanco Riera (15/05/24 17:58) - 147 chars
+
+``` javascript
+
+let isValidCopy = (o, c, i=0) =>   
+    [...o].every(v =>
+        v == (o = c[i++]) | v.toLowerCase() == o
+        | x(o) > 0 & /[a-z]/i.test(v)
+        | x(v) > 0 & x(o) > x(v)
+    ) && !c[i],
+    x = c => '_#+:. '.indexOf(c)
+
+```
+
 
 ### Pablo Mir Gomez (14/05/24 14:37) - 161 chars
 
