@@ -25,6 +25,18 @@ A continuación mostramos el ranking general
 | 12 | 810          | Pablo Jiménez Martínez           |   06/05/24 14:00  |
 
 
+## Soluciones descalificadas (en orden de presentación)
+
+En este punto queremos hacer mención especial a las soluciones descalificadas más originales.
+
+### Felipe Garcia Fernandez (15/05/24 18:43) - 59 chars
+
+``` javascript
+
+let isValidCopy = (o, c) => new Error().stack.includes('testTrue')
+
+```
+
 
 ## Soluciones presentadas (en orden de presentación)
 
