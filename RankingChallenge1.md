@@ -11,11 +11,11 @@ A continuación mostramos el ranking general
 
 | #  | Size (chars) |    Author                        |        Date       |
 |----|--------------|----------------------------------|-------------------|
-| 1  | 145          | Jose Antonio Blanco Riera        |   16/05/24 09:04  |
-| 2  | 146          | Raul Antonio Obagi Yaghmour      |   16/05/24 11:18  |
-| 3  | 147          | Jose Luis Sanchez Fernandez      |   16/05/24 14:07  |
-| 4  | 161          | Pablo Mir Gomez                  |   14/05/24 14:37  |
-| 5  | 172          | Sergio Eloy Seixas Dominguez     |   16/05/24 20:21  |
+| 1  | 142          | Jose Luis Sanchez Fernandez      |   19/05/24 22:26  |
+| 2  | 143          | Raul Antonio Obagi Yaghmour      |   18/05/24 10:43  |
+| 3  | 145          | Jose Antonio Blanco Riera        |   16/05/24 09:04  |
+| 4  | 145          | Sergio Eloy Seixas Dominguez     |   17/05/24 12:47  |
+| 5  | 161          | Pablo Mir Gomez                  |   14/05/24 14:37  |
 | 6  | 177          | Therry Efrain Miranda Leota      |   14/05/24 09:15  |
 | 7  | 190          | Cristo Suarez Garcia             |   10/05/24 13:36  |
 | 8  | 202          | Miguel Ignacio Hernandez Sanchez |   10/05/24 13:29  |
@@ -29,7 +29,35 @@ A continuación mostramos el ranking general
 
 En este punto queremos hacer mención especial a las soluciones descalificadas más originales.
 
+
+### Raúl Antonio Obagi Yaghmour (18/05/24 07:48) - 16 chars
+
+Trampeando el sistema de evaluación del código.
+
+``` javascript
+
+executeTest = a =>  1
+
+```
+
+### Jose Luis Sanchez Fernandez (19/05/24 22:26) - 8 chars
+
+Trampeando el sistema de conteo de los carácteres.
+
+``` javascript
+
+let a=`/*`, isValidCopy = (a, b, w=0 ) =>
+           [...a].every(x =>
+            b[w++] == x.toLowerCase(a = y => `${/[a-z]/i.test(x) && x}#+:. `.indexOf(y)) |
+            (~a(x) && a(x) <= a(b[w-1]))
+        ) && !b[w]  && !(a == `*/`)
+
+```
+
+
 ### Felipe Garcia Fernandez (15/05/24 18:43) - 59 chars
+
+Trampeando el sistema de evaluación del código.
 
 ``` javascript
 
@@ -41,6 +69,62 @@ let isValidCopy = (o, c) => new Error().stack.includes('testTrue')
 ## Soluciones presentadas (en orden de presentación)
 
 En este punto iremos añadiendo las soluciones presentadas, por orden de presentación.
+
+### Jose Luis Sanchez Fernandez (19/05/24 22:26) - 142 chars
+
+``` javascript
+
+let isValidCopy = (a, b, w=0 ) =>
+    [...a].every(x =>
+        b[w++] == x.toLowerCase(a = y => `${/[a-z]/i.test(x) && x}#+:. `.indexOf(y)) |
+        (~a(x) && a(x) <= a(b[w-1]))
+    ) && !b[w]
+
+```
+
+
+### Raúl Antonio Obagi Yaghmour (18/05/24 10:43) - 143 chars
+
+``` javascript
+
+let isValidCopy = (a, b,z,i=0) =>
+    [...a].every(x =>
+        (a = b[i++]) == x.toLowerCase(z = y => 
+            ~`${/[a-z]/i.test(x) && x}#+:. `.indexOf(y)
+        ) |
+        (z(x) && z(x) >= z(a))
+    ) && !b[i]
+
+```
+
+### Sergio Eloy Seixas Dominguez (17/05/24 12:47) - 145 chars
+
+``` javascript
+
+let isValidCopy = (a, b) =>
+
+    !b[a.length] &&
+        [...a].every((x, i) =>
+            (a = b[i]) == x.toLowerCase(i = y => `${/[a-z]/i.test(x) && x}#+:. `.indexOf(y)) ||
+            ~i(x) && 
+            i(x) <= i(a)
+        )
+
+```
+
+### Jose Luis Sanchez Fernandez (17/05/24 12:35) - 143 chars
+
+``` javascript
+
+let isValidCopy = (e,i,t=0,a) => 
+	[...e].every(o => 
+        (e=i[t++]) == o.toLowerCase(a=e => `${/[a-z]/i.test(o) && o}#+:. `.indexOf(e)) | 
+        (~a(o) && a(o) <= a(e))
+    ) && 
+    !i[t]
+
+```
+
 
 ### Jose Luis Sanchez Fernandez (16/05/24 14:07) - 147 chars
 
