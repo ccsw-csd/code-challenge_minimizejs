@@ -11,10 +11,10 @@ A continuación mostramos el ranking general
 
 | #  | Size (chars) |    Author                        |        Date       |
 |----|--------------|----------------------------------|-------------------|
-| 1  | 142          | Jose Luis Sanchez Fernandez      |   19/05/24 22:26  |
-| 2  | 143          | Raul Antonio Obagi Yaghmour      |   18/05/24 10:43  |
-| 3  | 145          | Jose Antonio Blanco Riera        |   16/05/24 09:04  |
-| 4  | 145          | Sergio Eloy Seixas Dominguez     |   17/05/24 12:47  |
+| 1  | 127          | Raul Antonio Obagi Yaghmour      |   01/06/24 15:31  |
+| 2  | 130          | Jose Antonio Blanco Riera        |   30/05/24 10:27  |
+| 3  | 141          | Sergio Eloy Seixas Dominguez     |   23/05/24 15:15  |
+| 4  | 142          | Jose Luis Sanchez Fernandez      |   19/05/24 22:26  |
 | 5  | 161          | Pablo Mir Gomez                  |   14/05/24 14:37  |
 | 6  | 177          | Therry Efrain Miranda Leota      |   14/05/24 09:15  |
 | 7  | 190          | Cristo Suarez Garcia             |   10/05/24 13:36  |
@@ -28,6 +28,18 @@ A continuación mostramos el ranking general
 ## Soluciones descalificadas (en orden de presentación)
 
 En este punto queremos hacer mención especial a las soluciones descalificadas más originales.
+
+### Raúl Antonio Obagi Yaghmour (01/06/24 15:31) - 7 chars
+
+Trampeando el sistema de evaluación del código.
+
+``` javascript
+
+let a=`/*`
+executeTest = a =>  1
+a=`*/`
+
+```
 
 
 ### Raúl Antonio Obagi Yaghmour (18/05/24 07:48) - 16 chars
@@ -69,6 +81,117 @@ let isValidCopy = (o, c) => new Error().stack.includes('testTrue')
 ## Soluciones presentadas (en orden de presentación)
 
 En este punto iremos añadiendo las soluciones presentadas, por orden de presentación.
+
+### Raúl Antonio Obagi Yaghmour (01/06/24 15:31) - 127 chars
+
+``` javascript
+
+  let isValidCopy = (a, b, i = 0) =>
+    [...a].every(
+      x =>
+        (a = y =>
+          (x + x.toLowerCase() + "#+:. " + x).indexOf(
+            y,
+            -("@"<x&x<"{") | 2
+          ))(x) <= a(b[i++])
+    ) && !b[i]
+
+```
+
+### Raúl Antonio Obagi Yaghmour (01/06/24 15:31) - 130 chars
+
+``` javascript
+
+let isValidCopy = (a, b, i = 0) =>
+  [...a].every(
+    x =>
+      (a = y =>
+        (x + x.toLowerCase() + "#+:. " + x).indexOf(
+          y,
+          -/[a-z]/i.test(x) | 2
+        ))(x) <= a(b[i++])
+  ) && !b[i]
+
+```
+
+### Jose Antonio Blanco Riera (30/05/24 10:27) - 130 chars
+
+``` javascript
+
+let isValidCopy = (o, c) =>
+
+    ![...o+0].some(
+        (x,i) =>
+            (o = c => (/[a-z#+:.]/i.test(x) ? ' .:+#' + x.toLowerCase() + x : x).indexOf(c) ^ 7)(x) > o(c[i])
+        ,c+=0
+    )
+
+```
+
+### Jose Antonio Blanco Riera (30/05/24 10:27) - 132 chars
+
+``` javascript
+
+let isValidCopy = (o, c) =>
+    ![...o+0].some(
+        (x,i) =>                    
+            (o = c => ~(/[a-z#+:.]/i.test(x) ? ' .:+#' + x.toLowerCase() + x : x).indexOf(c) | -8)(x) > o(c[i])
+        ,c+=0
+    )
+
+```
+
+### Jose Antonio Blanco Riera (29/05/24 17:24) - 137 chars
+
+``` javascript
+
+let isValidCopy = (o, c) =>
+    [...o+0].every((x,i) =>
+        c[i] == x.toLowerCase(o = k => ~`${/[a-z]/i.test(x) && x}#+:. `.indexOf(k))
+        || o(x) && o(x) >= o(c[i]), c+=0)
+
+```
+
+
+### Jose Antonio Blanco Riera (29/05/24 17:00) - 139 chars
+
+``` javascript
+
+let isValidCopy = (o, c) =>
+    [...o,'0'].every((x,i) =>
+        c[i] == x.toLowerCase(o = k => ~`${/[a-z]/i.test(x) && x}#+:. `.indexOf(k))
+        || o(x) && o(x) >= o(c[i]), c+=0)
+
+```
+
+
+
+### Jose Antonio Blanco Riera (29/05/24 16:47) - 140 chars
+
+``` javascript
+
+let isValidCopy = (o, c) =>
+    [...o,'0'].every((x,i) =>
+        c[i] == x.toLowerCase(o = k => ~`${/[a-z]/i.test(x) && x}#+:. `.indexOf(k))
+        | (o(x) && o(x) >= o(c[i])), c+=0)
+
+```
+
+
+
+### Sergio Eloy Seixas Dominguez (23/05/24 15:15) - 141 chars
+
+``` javascript
+
+let isValidCopy = (a, b, w=0 ) =>
+   [...a].every(x =>
+        b[w++] == x.toLowerCase(a = y => `${/[a-z]/i.test(x) && x}#+:. `.indexOf(y)) ||
+        ~a(x) && a(x) <= a(b[w-1])
+    ) && !b[w]
+
+```
+
+
 
 ### Jose Luis Sanchez Fernandez (19/05/24 22:26) - 142 chars
 
